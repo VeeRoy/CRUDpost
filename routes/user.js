@@ -20,13 +20,23 @@ server.post('/Register', async (req, res)=>{
 server.post('/login', async (req, res) =>{
     const bod = req.body
     const user = await userModel.find({
-        email: bod.email
+        email: bod.email,
+        password: bod.password
 })
     if(user.length == 0){
-        res.send('user not found')
+        res.send('user not found or password incorrect')
 }else{
     res.send('welcome')
 }
+})
+
+server.get('/getuser', async (req, res) =>{
+    const body = req.body
+    const user = await userModel.find({
+        email: body.email
+    })
+
+    res.send(user)
 })
 
 

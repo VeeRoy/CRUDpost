@@ -44,6 +44,21 @@ To get all the notes in the database go to
 
 (bloglink)/notes/(title of your note)       GET REQUEST
 
+
+To get user information go to
+
+(bloglink)/user/getuser   GET REQUEST
+
+and send in a json body object
+
+{
+
+  "email": "your registration email"
+
+}
+
+
+
 To create a notes go to
 
 (bloglink)/notes/ (your user id from the database(to authenticate a user) /write       POST REQUEST
